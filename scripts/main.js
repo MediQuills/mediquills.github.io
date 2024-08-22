@@ -60,3 +60,62 @@ $(window).scroll(function () {
   }
 });
 
+const backToTopButton = document.querySelector('.back-to-top');
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 100) {
+    backToTopButton.classList.add('show');
+  } else {
+    backToTopButton.classList.remove('show');
+  }
+});
+
+backToTopButton.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+
+const learnMoreButton = document.getElementById('learnMoreButton');
+const beAuthorTodayButton = document.getElementById('beAuthorTodayButton');
+const beAuthorTodayButton1 = document.getElementById('beAuthorTodayButton1')
+// Event listener for "Learn more about our recent publications" button
+learnMoreButton.addEventListener('click', (event) => {
+  event.preventDefault(); // Prevent default link behavior
+
+  const target = document.querySelector('#clients');
+  const offsetTop = target.offsetTop;
+
+  window.scrollTo({
+    top: offsetTop,
+    behavior: 'smooth'
+  });
+});
+
+// Event listener for "Be an Author Today" button
+beAuthorTodayButton.addEventListener('click', (event) => {
+  event.preventDefault(); // Prevent default link behavior
+
+  const target = document.querySelector('#contact');
+  const offsetTop = target.offsetTop;
+
+  window.scrollTo({
+    top: offsetTop,
+    behavior: 'smooth'
+  });
+});
+
+beAuthorTodayButton1.addEventListener('click', (event) => {
+  event.preventDefault(); // Prevent default link behavior
+
+  const target = document.querySelector('#contact');
+  const offsetTop = target.offsetTop;
+
+  window.scrollTo({
+    top: offsetTop,
+    behavior: 'smooth'
+  });
+});
+
